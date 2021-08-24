@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <%- include('../partials/head.ejs')  %> 
+<body>
+    <!-- navbar -->
+   <%- include('../partials/navbar.ejs')  %> 
+
+    <main class="container">
+        <h3 class="text-center">Editar Restaurant <%= restaurant.sucursal %> </h3>
+        <div class="container col-md-4">
+            <form class="row g-3" action="/admin/editResto/<%= restaurant.id %>?_method=PUT" method="POST">
+                <div class="col-12">
+                    <label for="inputName" class="form-label">sucursal</label>
+                    <input type="text" class="form-control" name="sucursal" id="inputName" value="<%= restaurant.sucursal %>">
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" name="dirección" id="inputAddress" value="<%= restaurant.dirección %>">
+                </div>
+                <div class="col-12">
+                    <label for="inputName" class="form-label">Telefono</label>
+                    <input type="tel" class="form-control" name="telefono" id="inputName" value="<%= restaurant.telefono %>">
+                </div>
+                
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Termino y condiciones</label>
+                </div>
+                <button type="submit" class="btn btn-success">EDITAR</button>
+              </form>
+        </div>
+        
+    </main>
+
+    <%- include('../partials/footer.ejs')  %> 
+
+</body>
+</html>

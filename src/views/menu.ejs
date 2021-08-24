@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <!-- header -->
+  <%- include('partials/head.ejs')  %> 
+  <body>
+    <!-- Navbar (sit on top) -->
+    <%- include('partials/navbar.ejs')  %> 
+   
+    <div class="container d-flex flex-wrap justify-content-center">
+        
+
+            <% db.menu.forEach(element => { %>
+                <div class="card m-2 text-white bg-dark" style="width: 18rem;">
+                <img src="<%= element.imagen %> " class="card-img-top" alt="...">
+                <div class="card-body bg-info">
+                <h5 class="card-title"><%= element.platos %> </h5>
+                <p class="card-text"><%= element.descripción.slice(0,18) %>...</p>
+                <p class="card-text"><%= element.precio %> </p>
+                <p class="card-text"><%= element.descuento %> %</p>
+                <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+            </div>
+            <% }) %>
+        
+        
+    </div>
+
+    </div>
+
+          <!-- Footer -->
+    <%- include('partials/footer.ejs')  %> 
+
+</body>
+</html>

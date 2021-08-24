@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <!-- header -->
+  <%- include('./partials/head.ejs')  %> 
+  <body>
+    <!-- Navbar (sit on top) -->
+    <%- include('./partials/navbar.ejs')  %> 
+    
+    <h1><%= message %></h1>
+    <h2><%= error.status %></h2>
+    <pre><%= error.stack %></pre>
+
+
+    
+          <!-- Footer -->
+    <%- include('./partials/footer.ejs')  %> 
+
+</body>
+</html>

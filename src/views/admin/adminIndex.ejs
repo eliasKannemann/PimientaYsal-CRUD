@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs')  %> 
+<body>
+  <!-- navbar -->
+  <%- include('../partials/navbar.ejs')  %> 
+  <main class="container">
+    <div class="p-3 text-end ">
+      <a class="btn btn-secondary" href="admin/addResto">AGREGAR SUCURSAL</a>
+    </div>
+    
+      <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Sucursal</th>
+              <th scope="col">Direccion</th>
+              <th scope="col">Telefono</th>
+              <th scope="col">horarios</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+  
+            <% db.data.forEach(sucursal => { %>
+              <tr>
+                <th scope="row"><%- sucursal.id %>  </th>
+                <td><%- sucursal.sucursal  %> </td>
+                <td><%= sucursal.dirección %> </td>
+                <td><%= sucursal.telefono %> </td>
+                <td><%= sucursal.horarios %> </td>
+                <td>
+                  <a type="button" class="btn btn-success" href="admin/editResto/<%- sucursal.id %> ">Editar</a>
+                </td>
+                <td>
+                  <form action="admin/eliminarResto/<%- sucursal.id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="btn btn-danger">Borrar</button>
+                  </form>
+                </td>
+                
+                
+              </tr>
+            <% }) %>
+            
+            
+          </tbody>
+          
+        </table>
+    
+  </main>
+    
+    <%- include('../partials/footer.ejs')  %> 
+</body>
+</html>

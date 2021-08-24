@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <%- include('../partials/head.ejs')  %> 
+  <body>
+    <!-- Navbar (sit on top) -->
+    <%- include('../partials/navbar.ejs')  %> 
+
+    <main class="container">
+        <h3 class="text-center">Agregar Restaurant</h3>
+        <div class="container col-md-4">
+            <form class="row g-3" action="/admin/addResto" method="post">
+                <div class="col-12">
+                    <label for="inputName" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="inputName">
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" name="dirección" id="inputAddress">
+                </div>
+                <div class="col-12">
+                    <label for="inputName" class="form-label">Telefono</label>
+                    <input type="tel" class="form-control" name="telefono" id="inputName">
+                </div>
+                
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">AGREGAR</button>
+              </form>
+        </div>
+        
+    </main>
+          <!-- Footer -->
+    <%- include('../partials/footer.ejs')  %> 
+
+</body>
+</html>
